@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout for the editor -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+    <!-- Book Name -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/LabelStyle"
+            android:text="@string/name" />
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_book_name"
+                android:hint="@string/hint_name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+    </LinearLayout>
+
+    <!-- Author -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/author"
+            style="@style/LabelStyle" />
+
+        <!-- Author Field -->
+        <EditText
+            android:id="@+id/edit_book_author"
+            android:hint="@string/hint_author"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+
+    <!-- Supplier -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/supplier"
+            style="@style/LabelStyle" />
+
+        <EditText
+            android:id="@+id/edit_supplier"
+            android:hint="@string/hint_supplier"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+    </LinearLayout>
+
+    <!-- Availability -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/availability"
+            style="@style/LabelStyle"/>
+
+            <!-- Availability field -->
+            <EditText
+                android:id="@+id/edit_availability"
+                android:hint="@string/hint_availability"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+    </LinearLayout>
+</LinearLayout>
