@@ -66,6 +66,7 @@ public class BookContract {
         public final static String COLUMN_BOOK_NAME = "name";
         public final static String COLUMN_AUTHOR_NAME = "author";
         public final static String COLUMN_SUPPLIER_NAME = "supplier";
+        public final static String COLUMN_SUPPLIER_PHONE = "phone";
         public final static String COLUMN_AVAILABILITY = "availability";
 
     }

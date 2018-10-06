@@ -12,8 +12,6 @@ import android.support.annotation.Nullable;
 
 import com.example.android.inventory.data.BookContract.BookEntry;
 
-
-
 public class BookProvider extends ContentProvider {
 
     private BookDbHelper mDbHelper;
@@ -34,7 +32,8 @@ public class BookProvider extends ContentProvider {
 
     @Nullable
     @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, String[] selectionArgs, @Nullable String sortOrder) {
+    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection,
+                        String[] selectionArgs, @Nullable String sortOrder) {
 
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         Cursor cursor;
@@ -146,16 +145,21 @@ public class BookProvider extends ContentProvider {
     }
 
     @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
+    public int update(@NonNull Uri uri, ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
 
         final int match = sUriMatcher.match(uri);
 
         switch (match){
             case BOOKS:
                 return updateBook(uri, values, selection, selectionArgs);
+            case BOOK_ID:
+                selection = BookEntry._ID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+                return updateBook(uri, values, selection, selectionArgs);
+            default:
+                throw new IllegalArgumentException("Update is not supported for " + uri);
 
         }
-        return 0;
     }
 
     private int updateBook (Uri uri, ContentValues values, String selection, String[] selectionArgs){

@@ -12,7 +12,6 @@ import com.example.android.inventory.data.BookContract.BookEntry;
 
 public class BookCursorAdapter extends CursorAdapter {
 
-
     public BookCursorAdapter(Context context, Cursor c) {
         super(context, c, 0);
     }
@@ -34,7 +33,7 @@ public class BookCursorAdapter extends CursorAdapter {
 
         String name = cursor.getString(cursor.getColumnIndexOrThrow(BookEntry.COLUMN_BOOK_NAME));
         String author = cursor.getString(cursor.getColumnIndexOrThrow(BookEntry.COLUMN_AUTHOR_NAME));
-        String availability = String.valueOf(cursor.getString(cursor.getColumnIndexOrThrow(BookEntry.COLUMN_AVAILABILITY)));
+        String availability = cursor.getString(cursor.getColumnIndexOrThrow(BookEntry.COLUMN_AVAILABILITY));
 
         nameTextView.setText(name);
         authorTextView.setText(author);

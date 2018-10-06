@@ -73,15 +73,32 @@
 
         <!-- Label -->
         <TextView
-            android:text="@string/availability"
+            android:text="@string/supplier_phone"
             style="@style/LabelStyle"/>
 
             <!-- Availability field -->
             <EditText
-                android:id="@+id/edit_availability"
-                android:hint="@string/hint_availability"
-                android:inputType="number"
+                android:id="@+id/edit_phone"
+                android:hint="@string/hint_supplier_phone"
+                android:inputType="phone"
                 style="@style/EditorFieldStyle" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/availability"
+            style="@style/LabelStyle"/>
+
+        <!-- Availability field -->
+        <EditText
+            android:id="@+id/edit_availability"
+            android:hint="@string/hint_availability"
+            android:inputType="number"
+            style="@style/EditorFieldStyle" />
     </LinearLayout>
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.android.inventory.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import com.example.android.inventory.data.BookContract.BookEntry;
 
 public class BookDbHelper extends SQLiteOpenHelper {
@@ -22,6 +23,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
                 BookEntry.COLUMN_BOOK_NAME + " TEXT NOT NULL, " +
                 BookEntry.COLUMN_AUTHOR_NAME + " TEXT DEFAULT 'N/A', " +
                 BookEntry.COLUMN_SUPPLIER_NAME + " TEXT, " +
+                BookEntry.COLUMN_SUPPLIER_PHONE + " TEXT DEFAULT 'N/A', " +
                 BookEntry.COLUMN_AVAILABILITY + " INTEGER NOT NULL DEFAULT 0);";
         db.execSQL(SQL_CREATE_BOOKS_TABLE);
     }
