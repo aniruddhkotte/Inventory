@@ -3,7 +3,6 @@ package com.example.android.inventory.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import com.example.android.inventory.data.BookContract.BookEntry;
 
 public class BookDbHelper extends SQLiteOpenHelper {
@@ -11,7 +10,7 @@ public class BookDbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "books.db";
 
-    public BookDbHelper(Context context) {
+    private BookDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
